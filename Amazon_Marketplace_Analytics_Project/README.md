@@ -1,13 +1,25 @@
-# Amazon_Marketplace_Analytics_Project (Dashboard-aligned)
+## 📐 Process Diagrams
 
-This project is aligned to the uploaded dashboard file stored in `/Dashboard`.
+### As-Is Workflow (Current State)
+Manual reporting, inconsistent metrics, limited trust in insights.
 
-## Key Deliverables
-- Word docs: `/Docs/BRD.docx`, `/Docs/FRD.docx`
-- Dataset: `/Data/amazon_marketplace_aligned.csv`
-- Excel analysis workbook: `/Excel/Amazon_Marketplace_Analytics_Project_Project_Workbook.xlsx`
-- SQL validation pack: `/SQL/queries.sql`
-- Executive deck: `/Deck/Executive_Deck.pptx`
-- Dashboard file: `/Dashboard/Amazon_Marketplace_Analytics_Dashboard.pbix`
+![Amazon As-Is](Diagrams/Amazon_As-Is_Process.png)
 
-Author: Jamie Christian
+---
+
+### To-Be Workflow (Future State)
+Automated data refresh, aligned KPIs, leadership trust in insights.
+
+![Amazon To-Be](Diagrams/Amazon_To-Be_Process.png)
+
+---
+
+### Swimlane Diagram
+Shows how responsibilities flow across:
+- Business Owner  
+- Business Analyst  
+- Marketing Team  
+- Data Systems  
+- Dashboard  
+
+![Amazon Swimlane](Diagrams/Amazon_Swimlane.png)
