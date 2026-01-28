@@ -57,7 +57,7 @@ Illustrates interactions between:
 - Finance Systems  
 - Reporting Outputs  
 
-![FPnA Swimlane](Diagrams/FPnA_Swimlane.png)
+![Swimlane](Diagrams/%20FPnA_Swimlane.png)
 
 ---
 
