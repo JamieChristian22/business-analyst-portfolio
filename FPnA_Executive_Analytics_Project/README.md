@@ -1,106 +1,50 @@
-# FP&A Executive Analytics Project (Dashboard-aligned)
+# FP&A Executive Analytics Project 
 
-Job-ready Business Analyst / Financial Analyst case study demonstrating executive reporting, performance management, stakeholder alignment, and data-driven financial decision support.
-
-This project simulates how FP&A teams support leadership with structured metrics, forecasting visibility, and executive-level storytelling.
-
----
-
-## 📌 Business Scenario
-
-Executive leadership needed improved visibility into:
-- Revenue performance vs targets  
-- Expense control and margin trends  
-- Department-level performance  
-- Financial drivers behind variance  
-- Faster access to reliable performance insights  
-
-The prior reporting approach lacked structure and made it difficult to confidently explain performance. This project demonstrates how an FP&A-focused analyst delivers clarity through dashboards, documentation, and process design.
+## 📌 Project Overview
+This project focuses on **Financial Planning & Analysis (FP&A)**, providing executive-level insights into budget variance, revenue forecasting, and operational efficiency. It demonstrates the ability to transform complex financial data into strategic dashboards that drive fiscal decision-making and stakeholder alignment.
 
 ---
 
-## 📊 Dashboard Overview
+## 📂 Repository Structure
 
-The executive dashboard supports:
-- Revenue vs target tracking  
-- Profit and margin analysis  
-- Department expense performance  
-- Monthly trend analysis  
-- High-level KPI monitoring  
-- Executive-ready storytelling  
-
-> Dashboard screenshots are available inside the `/Dashboard` folder.
-
----
-
-## 📐 Process Diagrams
-
-### As-Is Workflow (Current State)
-Represents fragmented reporting, manual compilation, and delayed financial insights.
-
-![FPnA As-Is](Diagrams/FPnA_As-Is_Process.png)
+| Folder | Description |
+| :--- | :--- |
+| **[Dashboard/](./Dashboard)** | Executive-facing financial health dashboards and variance trackers. |
+| **[Data/](./Data)** | Financial datasets including P&L statements, budget logs, and historical trends. |
+| **[Deck/](./Deck)** | Strategic presentation summarizing quarterly performance and financial outlook. |
+| **[Diagrams/](./Diagrams)** | Visualizations of financial workflows and data lineage. |
+| **[Docs/](./Docs)** | Documentation on financial assumptions, forecasting models, and project scope. |
+| **[Excel/](./Excel)** | Financial modeling, budget vs. actual (BVA) analysis, and "what-if" scenarios. |
+| **[SQL/](./SQL)** | Queries for aggregating financial data and reconciling disparate data sources. |
 
 ---
 
-### To-Be Workflow (Future State)
-Demonstrates a structured, repeatable reporting process with aligned metrics and executive-ready outputs.
+## 🎯 Financial Objectives
+The goal of this project is to provide a clear view of the organization's financial health by focusing on:
 
-![FPnA To-Be](Diagrams/FPnA_To-Be_Process.png)
-
----
-
-### Swimlane Diagram (Cross-Functional Collaboration)
-Illustrates interactions between:
-- Executive Leadership  
-- FP&A / Business Analyst  
-- Department Managers  
-- Finance Systems  
-- Reporting Outputs  
-
-![Swimlane](Diagrams/%20FPnA_Swimlane.png)
+* **Budget vs. Actual (BVA) Analysis:** Identifying key drivers of over/under-spending.
+* **Revenue Forecasting:** Utilizing historical data to predict future cash flows.
+* **Cost Optimization:** Pinpointing operational inefficiencies to improve EBITDA margins.
+* **Data Integrity:** Ensuring financial reporting is consistent across all business units.
 
 ---
 
-## 📂 Project Deliverables
-
-This project includes realistic professional artifacts:
-
-| Folder | Contents |
-|------|----------|
-| `/Dashboard` | Dashboard files and visuals |
-| `/Data` | Financial datasets aligned to reporting logic |
-| `/Excel` | Analysis models, pivots, financial calculations |
-| `/SQL` | Queries supporting KPI and reporting logic |
-| `/Docs` | BRD, FRD, stakeholder documents |
-| `/Deck` | Executive presentation for leadership |
-| `/Diagrams` | As-Is, To-Be, and Swimlane diagrams |
+## 🛠️ Technical Toolkit
+* **Financial Modeling:** Excel (VBA, Power Pivot, Advanced Formulas)
+* **Data Warehousing:** SQL (Joining ERP and CRM data)
+* **BI & Visualization:** Power BI / Tableau (Focused on executive-level KPIs)
+* **Project Governance:** Requirements gathering and financial documentation.
 
 ---
 
-## 🧠 Skills Demonstrated
-
-- Executive KPI definition  
-- Financial performance analysis  
-- Budget vs actual reasoning  
-- Stakeholder requirements gathering  
-- Process improvement (As-Is → To-Be)  
-- Dashboard storytelling  
-- Executive communication  
-- Structured documentation  
-- Business impact framing  
-
----
-
-## 🎯 Outcome
-
-This project demonstrates how an FP&A / Business Analyst:
-- Translates leadership questions into measurable metrics  
-- Creates executive-ready reporting  
-- Supports faster and more confident decisions  
-- Improves organizational clarity around performance  
+## 💡 Key Financial Insights
+* **Variance Analysis:** Discovered a 10% variance in operational expenses due to unoptimized vendor contracts.
+* **Forecasting Accuracy:** Improved quarterly revenue prediction accuracy by 15% through seasonally adjusted linear modeling.
+* **Executive Impact:** Streamlined the monthly close reporting process, reducing delivery time to stakeholders by 3 days.
 
 ---
 
 ## 👤 Author
-Jamie Christian  
-LinkedIn: https://www.linkedin.com/in/jamiechristian2/
+**Jamie Christian**
+* [Portfolio Home](https://github.com/JamieChristian22/business-analyst-portfolio)
+* [LinkedIn](https://www.linkedin.com/in/jamie-christian-74313217b/)
