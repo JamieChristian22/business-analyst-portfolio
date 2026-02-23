@@ -1,107 +1,49 @@
-# Marketing Performance & ROI Analytics Project (Dashboard-aligned)
+# Marketing Performance & ROI Project 
 
-Job-ready Business Analyst / Marketing Analyst case study demonstrating marketing performance measurement, ROI evaluation, stakeholder alignment, and data-driven campaign optimization.
-
-This project simulates how analysts support marketing leaders with clear performance insights and structured decision-making.
-
----
-
-## 📌 Business Scenario
-
-The marketing team needed stronger visibility into:
-- Campaign effectiveness  
-- Return on ad spend (ROAS)  
-- Channel-level performance  
-- Conversion trends  
-- Which initiatives to scale or cut  
-- Faster feedback loops between data and action  
-
-Previously, insights were fragmented and difficult to trust. This project demonstrates how structured analytics improves marketing outcomes.
+## 📌 Project Overview
+This project focuses on evaluating marketing effectiveness through data-driven attribution and Return on Investment (ROI) analysis. It demonstrates the ability to track multi-channel campaign performance, optimize budget allocation, and provide actionable insights to marketing stakeholders to drive customer acquisition and revenue growth.
 
 ---
 
-## 📊 Dashboard Overview
+## 📂 Repository Structure
 
-The marketing performance dashboard supports:
-- Campaign-level ROI tracking  
-- ROAS by channel (paid search, paid social, email, etc.)  
-- Spend vs revenue analysis  
-- Conversion rate trends  
-- Top-performing and underperforming campaigns  
-- Executive-friendly performance summaries  
-
-> Dashboard visuals and screenshots are available inside the `/Dashboard` folder.
-
----
-
-## 📐 Process Diagrams
-
-### As-Is Workflow (Current State)
-Shows disconnected reporting, manual analysis, delayed optimization, and unclear performance accountability.
-
-![Marketing As-Is](Diagrams/Marketing_As-Is_Process.png)
+| Folder | Description |
+| :--- | :--- |
+| **[Dashboard/](./Dashboard)** | Visualization of marketing KPIs, conversion rates, and channel performance. |
+| **[Data/](./Data)** | Campaign performance data, lead generation logs, and customer touchpoint datasets. |
+| **[Deck/](./Deck)** | Executive summary presenting campaign findings and strategic budget recommendations. |
+| **[Diagrams/](./Diagrams)** | Customer journey maps, attribution models, and marketing technology (MarTech) stacks. |
+| **[Docs/](./Docs)** | Business requirements, campaign metadata, and measurement frameworks. |
+| **[Excel/](./Excel)** | ROI calculations, cohort analysis, and initial data exploration. |
+| **[SQL/](./SQL)** | Queries for data joining across platforms (e.g., Google Ads, CRM) and ETL processes. |
 
 ---
 
-### To-Be Workflow (Future State)
-Illustrates a structured, insight-driven marketing optimization process supported by analytics.
-
-![Marketing To-Be](Diagrams/Marketing_To-Be_Process.png)
-
----
-
-### Swimlane Diagram (Cross-Functional Collaboration)
-Demonstrates how collaboration occurs between:
-- Marketing Leadership  
-- Marketing Managers  
-- Business Analyst  
-- Data Systems  
-- Dashboards & Reporting  
-
-![Marketing Swimlane](Diagrams/Marketing_Swimlane.png)
+## 🎯 Business Objectives
+The primary goal of this project is to maximize marketing efficiency by:
+* **ROI Optimization:** Identifying the highest-performing channels (Social, Search, Email) based on Customer Acquisition Cost (CAC).
+* **Attribution Modeling:** Understanding the customer journey from first touch to final conversion.
+* **Churn Analysis:** Correlating specific marketing campaigns with long-term customer retention.
+* **Budget Forecasting:** Providing data-backed recommendations for future quarterly marketing spend.
 
 ---
 
-## 📂 Project Deliverables
-
-This project mirrors real consulting-style deliverables:
-
-| Folder | Contents |
-|------|----------|
-| `/Dashboard` | Marketing performance dashboard visuals |
-| `/Data` | Campaign and performance datasets |
-| `/Excel` | ROI calculations, pivots, analysis models |
-| `/SQL` | Queries supporting KPI logic |
-| `/Docs` | BRD, FRD, stakeholder artifacts |
-| `/Deck` | Executive-ready presentation |
-| `/Diagrams` | As-Is, To-Be, and Swimlane diagrams |
+## 🛠️ Technical Toolkit
+* **Analytics & Modeling:** SQL, Excel (Pivot Tables, Power Query)
+* **Data Visualization:** Power BI / Tableau 
+* **Marketing Context:** UTM Tracking, Funnel Analysis, A/B Testing
+* **Documentation:** Microsoft Word, Lucidchart (Marketing Flowcharts)
 
 ---
 
-## 🧠 Skills Demonstrated
-
-- Marketing KPI definition  
-- ROI and ROAS analysis  
-- Funnel performance analysis  
-- Stakeholder requirements gathering  
-- Process improvement (As-Is → To-Be)  
-- Dashboard storytelling  
-- Executive communication  
-- Structured documentation  
-- Insight-to-action framing  
-
----
-
-## 🎯 Outcome
-
-This project demonstrates how a Business Analyst / Marketing Analyst:
-- Turns marketing data into strategic insights  
-- Improves campaign decision-making  
-- Supports leadership with trusted reporting  
-- Creates continuous optimization loops  
+## 💡 Key Marketing Insights
+* **Channel Performance:** Discovered that Organic Search drives 30% higher LTV compared to Paid Social, despite a longer conversion cycle.
+* **Cost Efficiency:** Optimized ad spend by reallocating 15% of the budget from underperforming keywords, resulting in a 10% decrease in overall CAC.
+* **Funnel Breakthrough:** Identified a significant bottleneck in the landing page conversion rate for mobile users, leading to a UI/UX redesign proposal.
 
 ---
 
 ## 👤 Author
-Jamie Christian  
-LinkedIn: https://www.linkedin.com/in/jamiechristian2/
+**Jamie Christian**
+* [Portfolio Home](https://github.com/JamieChristian22/business-analyst-portfolio)
+* [LinkedIn](https://www.linkedin.com/in/jamie-christian-74313217b/)
