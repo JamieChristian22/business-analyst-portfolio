@@ -1,101 +1,50 @@
 # Ecommerce Product Analytics Project (Dashboard-aligned)
 
-Job-ready Business Analyst case study demonstrating end-to-end analytics, stakeholder alignment, process improvement, and executive-ready insights for an ecommerce product environment.
-
-This project showcases how a Business Analyst supports product and revenue decisions through structured requirements, data analysis, visualization, and process optimization.
-
----
-
-## 📌 Business Scenario
-
-Leadership requested better visibility into ecommerce product performance to answer key questions such as:
-- Which products are driving revenue and margin?
-- Where are customers dropping off in the funnel?
-- Which campaigns and categories are underperforming?
-- How can decision-making be improved with clearer metrics?
-
-The initial process was fragmented and slow. This project demonstrates both the **current (As-Is)** state and the **optimized (To-Be)** future state.
+## 📌 Project Overview
+This project is a job-ready **Business Analyst case study** demonstrating end-to-end analytics, stakeholder alignment, and process optimization within an ecommerce environment. It showcases how a Business Analyst supports product and revenue decisions through structured requirements, data analysis, visualization, and strategic insights.
 
 ---
 
-## 📊 Dashboard Overview
-The dashboard supports:
-- Revenue and order trends  
-- Product performance by category  
-- Conversion and funnel analysis  
-- Campaign effectiveness  
-- Actionable performance insights  
+## 📂 Repository Structure
 
-> Dashboard screenshots are located in the `/Dashboard` folder.
-
----
-
-## 📐 Process Diagrams
-
-### As-Is Workflow (Current State)
-Shows the original process where reporting is fragmented, definitions vary, and insights are delayed.
-
-![Ecommerce As-Is](Diagrams/Ecommerce_As-Is_Process.png)
+| Folder | Description |
+| :--- | :--- |
+| **[Dashboard/](./Dashboard)** | Interactive visualizations and KPI tracking for executive-ready reporting. |
+| **[Data/](./Data)** | Raw and cleaned datasets used for the analysis (CSV/JSON). |
+| **[Deck/](./Deck)** | Presentation slides summarizing methodology, insights, and recommendations. |
+| **[Diagrams/](./Diagrams)** | Visual process maps, user flows, and BPMN diagrams. |
+| **[Docs/](./Docs)** | Project documentation, including Business Requirements Documents (BRD). |
+| **[Excel/](./Excel)** | Preliminary data cleaning, pivot tables, and financial modeling. |
+| **[SQL/](./SQL)** | Scripts for data extraction, transformation (ETL), and deep-dive analysis. |
 
 ---
 
-### To-Be Workflow (Future State)
-Illustrates the optimized workflow with aligned KPIs, improved visibility, and faster business decision-making.
+## 🎯 Business Objectives
+The primary goal of this project was to bridge the gap between raw ecommerce data and actionable business strategy. Key focus areas include:
 
-![Ecommerce To-Be](Diagrams/Ecommerce_To-Be_Process.png)
-
----
-
-### Swimlane Diagram (Cross-Functional Flow)
-Demonstrates collaboration across:
-- Product Management  
-- Business Analysis  
-- Marketing  
-- Data / Analytics  
-- Leadership  
-
-![Ecommerce Swimlane](Diagrams/Ecommerce_Swimlane.png)
+* **Conversion Funnel Analysis:** Identifying friction points where users drop off.
+* **Customer Segmentation:** Analyzing behavior patterns across different demographics.
+* **Revenue Optimization:** Pinpointing high-margin products and underperforming categories.
+* **Stakeholder Alignment:** Translating technical data into business-friendly insights.
 
 ---
 
-## 📂 Project Deliverables
-
-This project includes realistic Business Analyst artifacts:
-
-| Folder | Contents |
-|------|----------|
-| `/Dashboard` | Dashboard files and screenshots |
-| `/Data` | Simulated datasets aligned to the dashboard |
-| `/Excel` | Business analysis models, pivots, and calculations |
-| `/SQL` | Queries used to generate KPIs and tables |
-| `/Docs` | BRD, FRD, requirements, and stakeholder artifacts |
-| `/Deck` | Executive-ready presentation |
-| `/Diagrams` | As-Is, To-Be, and Swimlane diagrams |
+## 🛠️ Technical Toolkit
+* **Data Analysis:** SQL (PostgreSQL/BigQuery), Excel (Power Query & Pivot)
+* **Visualization:** Power BI / Tableau
+* **Documentation:** Microsoft Word, Lucidchart (BPMN)
+* **Methodology:** Agile/SCRUM, Requirements Gathering, Gap Analysis
 
 ---
 
-## 🧠 Skills Demonstrated
-
-- Business requirements gathering  
-- KPI definition and stakeholder alignment  
-- Process mapping (As-Is / To-Be / Swimlane)  
-- Data analysis and interpretation  
-- Dashboard-driven storytelling  
-- Executive communication  
-- Structured documentation  
-- Business impact thinking  
-
----
-
-## 🎯 Outcome
-This project demonstrates how a Business Analyst:
-- Turns vague questions into structured requirements  
-- Aligns stakeholders on metrics and definitions  
-- Builds artifacts that support confident decisions  
-- Improves operational clarity and performance  
+## 💡 Key Insights & Deliverables
+* **Insight 1:** Identified a 12% drop-off in the checkout flow due to shipping cost transparency.
+* **Insight 2:** Discovered that mobile users have a 20% higher cart abandonment rate than desktop users.
+* **Deliverable:** An automated dashboard that tracks "Real-time Sales vs. Targets" to assist daily decision-making.
 
 ---
 
 ## 👤 Author
-Jamie Christian  
-LinkedIn: https://www.linkedin.com/in/jamiechristian2/
+**Jamie Christian**
+* [Portfolio Home](https://github.com/JamieChristian22/business-analyst-portfolio)
+* [LinkedIn](https://www.linkedin.com/in/jamie-christian-74313217b/)
