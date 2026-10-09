@@ -1,0 +1,48 @@
+{
+  "project": "ADS",
+  "source_file": "marketing_ads_roi_dashboard_aligned.csv",
+  "sha256": "318e33a200b946d18701c20cfa715d0980c865b8353affcaaca86116d5ed4d83",
+  "records": 1104,
+  "fields": [
+    "Month",
+    "Ad Group",
+    "Device",
+    "Impressions",
+    "Clicks",
+    "CTR",
+    "CPC",
+    "Conv Rate",
+    "Conversions",
+    "Cost",
+    "Revenue",
+    "Sale Amount",
+    "P&L"
+  ],
+  "periods": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "complete_repeated_rows": 0,
+  "source_validation_exceptions": 0,
+  "exception_examples": [],
+  "deduplication": "None. Source rows are retained. Business-key exceptions must be investigated.",
+  "lineage": "source_row is the one-based data record number after the CSV header.",
+  "dimensions": {
+    "Ad Group": [
+      "Affiliates",
+      "Brand Search",
+      "Creator/UGC",
+      "Non-Brand Search",
+      "Prospecting",
+      "Retargeting"
+    ],
+    "Device": [
+      "Desktop",
+      "Mobile"
+    ]
+  }
+}
