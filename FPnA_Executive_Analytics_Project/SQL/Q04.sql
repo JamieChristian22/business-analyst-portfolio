@@ -1,0 +1,4 @@
+-- Q04: Fact versus dashboard reconciliation
+-- SQLite 3.25+; canonical schema loaded by scripts/run_analysis.py.
+-- Complete supplied extract; amounts USD by portfolio assumption.
+WITH f AS (SELECT month,department,SUM(amount) fact_revenue FROM finance WHERE scenario='Actual' AND account_category='Revenue' GROUP BY month,department),k AS (SELECT month,department FROM f UNION SELECT month,department FROM finance_summary) SELECT k.month,k.department,f.fact_revenue,s.revenue_actual dashboard_revenue,f.fact_revenue-s.revenue_actual difference,CASE WHEN f.fact_revenue IS NULL OR s.revenue_actual IS NULL THEN 'MISSING SOURCE' WHEN ABS(f.fact_revenue-s.revenue_actual)>0.01 THEN 'UNRESOLVED DIFFERENCE' ELSE 'MATCH' END disposition FROM k LEFT JOIN f ON k.month=f.month AND k.department=f.department LEFT JOIN finance_summary s ON k.month=s.month AND k.department=s.department ORDER BY k.month,k.department;

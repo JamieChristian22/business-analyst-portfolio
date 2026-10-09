@@ -1,0 +1,4 @@
+-- Q02: Monthly actual budget bridge
+-- SQLite 3.25+; canonical schema loaded by scripts/run_analysis.py.
+-- Complete supplied extract; amounts USD by portfolio assumption.
+WITH m AS (SELECT month,SUM(CASE WHEN scenario='Actual' AND account_category='Revenue' THEN amount ELSE 0 END) revenue_actual,SUM(CASE WHEN scenario='Budget' AND account_category='Revenue' THEN amount ELSE 0 END) revenue_budget,SUM(CASE WHEN scenario='Actual' AND account_category='COGS' THEN amount ELSE 0 END) cogs_actual,SUM(CASE WHEN scenario='Actual' AND account_category='OpEx' THEN amount ELSE 0 END) opex_actual FROM finance GROUP BY month) SELECT *,revenue_actual-revenue_budget revenue_variance,1.0*(revenue_actual-revenue_budget)/NULLIF(revenue_budget,0) revenue_variance_rate,revenue_actual-cogs_actual-opex_actual operating_income,1.0*(revenue_actual-cogs_actual)/NULLIF(revenue_actual,0) gross_margin FROM m ORDER BY month;

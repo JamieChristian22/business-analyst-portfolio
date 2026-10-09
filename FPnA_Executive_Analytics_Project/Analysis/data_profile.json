@@ -1,0 +1,62 @@
+{
+  "project": "FIN",
+  "source_file": "fpna_finance_fact.csv",
+  "sha256": "da43a29ac9694d4dccf43ffd065e311773e6b5bdb771fe2da8a56778159d8225",
+  "records": 420,
+  "fields": [
+    "MonthYear",
+    "FiscalYear",
+    "Department",
+    "Region",
+    "Account",
+    "AccountCategory",
+    "Scenario",
+    "Amount"
+  ],
+  "periods": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "complete_repeated_rows": 0,
+  "source_validation_exceptions": 0,
+  "exception_examples": [],
+  "deduplication": "None. Source rows are retained. Business-key exceptions must be investigated.",
+  "lineage": "source_row is the one-based data record number after the CSV header.",
+  "dimensions": {
+    "Department": [
+      "Customer Success",
+      "G&A",
+      "Marketing",
+      "Product",
+      "Sales"
+    ],
+    "Region": [
+      "APAC",
+      "EMEA",
+      "NA-East",
+      "NA-West"
+    ],
+    "Account": [
+      "Cloud Hosting",
+      "Facilities",
+      "Professional Services",
+      "Salaries",
+      "Software Tools",
+      "Subscription Revenue",
+      "Support"
+    ],
+    "AccountCategory": [
+      "COGS",
+      "OpEx",
+      "Revenue"
+    ],
+    "Scenario": [
+      "Actual",
+      "Budget"
+    ]
+  }
+}

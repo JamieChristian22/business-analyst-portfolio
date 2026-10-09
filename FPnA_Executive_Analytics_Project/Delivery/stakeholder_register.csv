@@ -1,0 +1,7 @@
+Role,Position,Decision Rights,Influence,Interest,Engagement
+Sponsor,Chief Financial Officer,"Approve scope, funding assumptions, and business release",High,High,Decision review at discovery and release
+Business owner,FP&A Manager,Approve metric semantics and UAT disposition,High,High,Weekly working session and exception triage
+Primary user,Finance Analyst,Validate report interpretation and review workflow,Medium,High,Prototype walkthrough and usability review
+Data owner,Source System Administrator,"Confirm keys, source semantics, completeness, and export authorization",High,Medium,Data-contract review and refresh triage
+Engineering,Data / BI Engineer,"Implement transformations, access controls, logging, and refresh",Medium,High,Backlog refinement and technical review
+Control reviewer,Finance / Security Reviewer,"Approve reconciliation, sensitive-data handling, and access model",High,Medium,Control review before release

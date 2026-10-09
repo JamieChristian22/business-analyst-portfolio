@@ -1,0 +1,7 @@
+scenario,account_category,records,amount
+Actual,COGS,60,5399711.0
+Actual,OpEx,90,6480942.0
+Actual,Revenue,60,13328601.0
+Budget,COGS,60,5382121.0
+Budget,OpEx,90,6513882.0
+Budget,Revenue,60,13330369.0
