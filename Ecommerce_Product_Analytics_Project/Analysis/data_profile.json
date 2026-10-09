@@ -1,0 +1,77 @@
+{
+  "project": "ECOM",
+  "source_file": "ecommerce_product_analytics_aligned.csv",
+  "sha256": "12da40d34fac38874fb3387720bbf9d5f77835d4d60d5cbd3fe682a49f68bf64",
+  "records": 14000,
+  "fields": [
+    "YearMonth",
+    "device_type",
+    "acquisition_channel",
+    "country",
+    "category",
+    "product_id",
+    "Viewed Customers",
+    "Cart Customers",
+    "Checkout Customers",
+    "Purchased Customers",
+    "Total Revenue",
+    "Profit",
+    "Total Orders",
+    "Profit Margin",
+    "View \u2192 Cart %",
+    "Cart \u2192 Checkout %",
+    "Checkout \u2192 Purchase %",
+    "Drop-off (Views\u2192Cart)",
+    "Drop-off (Cart\u2192Checkout)",
+    "Drop-off (Checkout\u2192Purchase)",
+    "Funnel Metric",
+    "Stage",
+    "AOV"
+  ],
+  "periods": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "complete_repeated_rows": 138,
+  "source_validation_exceptions": 0,
+  "exception_examples": [],
+  "deduplication": "None. Source rows are retained. Business-key exceptions must be investigated.",
+  "lineage": "source_row is the one-based data record number after the CSV header.",
+  "dimensions": {
+    "device_type": [
+      "desktop",
+      "mobile",
+      "tablet"
+    ],
+    "acquisition_channel": [
+      "email",
+      "organic",
+      "paid_search",
+      "paid_social",
+      "referral"
+    ],
+    "country": [
+      "AU",
+      "CA",
+      "UK",
+      "US"
+    ],
+    "category": [
+      "Accessories",
+      "Bottoms",
+      "Outerwear",
+      "Shoes",
+      "Tops"
+    ],
+    "Funnel Metric": [
+      "Purchase Conversion"
+    ],
+    "Stage": [
+      "Purchased"
+    ]
+  }
+}

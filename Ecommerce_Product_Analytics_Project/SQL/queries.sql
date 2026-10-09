@@ -1,23 +1,16 @@
--- E-commerce Product Analytics dashboard-aligned query pack
--- Table: sessions (YearMonth, device_type, acquisition_channel, country, category,
---                 [Viewed Customers],[Cart Customers],[Checkout Customers],[Purchased Customers],
---                 [Total Revenue],[Total Orders], Profit)
+-- Reference query pack. Run scripts/run_analysis.py to export each query separately.
 
--- Q1: Funnel rates by device_type
-SELECT device_type,
-       SUM([Viewed Customers]) AS Viewed,
-       SUM([Cart Customers]) AS Cart,
-       SUM([Checkout Customers]) AS Checkout,
-       SUM([Purchased Customers]) AS Purchased,
-       SUM([Purchased Customers])*1.0/NULLIF(SUM([Viewed Customers]),0) AS PurchaseConversion
-FROM sessions
-GROUP BY device_type;
+-- Q01: Funnel control totals
+SELECT COUNT(*) records,SUM(views) views,SUM(carts) carts,SUM(checkouts) checkouts,SUM(purchases) purchases,SUM(orders) orders,SUM(revenue) revenue,SUM(profit) profit FROM ecommerce;
 
--- Q2: Profit Margin by category
-SELECT category,
-       SUM(Profit) AS Profit,
-       SUM([Total Revenue]) AS [Total Revenue],
-       SUM(Profit)/NULLIF(SUM([Total Revenue]),0) AS [Profit Margin]
-FROM sessions
-GROUP BY category
-ORDER BY Profit DESC;
+-- Q02: Device funnel
+SELECT device,SUM(views) views,SUM(carts) carts,SUM(checkouts) checkouts,SUM(purchases) purchases,1.0*SUM(carts)/NULLIF(SUM(views),0) view_cart_rate,1.0*SUM(checkouts)/NULLIF(SUM(carts),0) cart_checkout_rate,1.0*SUM(purchases)/NULLIF(SUM(checkouts),0) checkout_purchase_rate,1.0*SUM(purchases)/NULLIF(SUM(views),0) view_purchase_rate FROM ecommerce GROUP BY device ORDER BY views DESC,device;
+
+-- Q03: Channel economics
+SELECT channel,SUM(views) views,SUM(purchases) purchases,SUM(orders) orders,SUM(revenue) revenue,SUM(profit) profit,1.0*SUM(profit)/NULLIF(SUM(revenue),0) profit_margin,1.0*SUM(revenue)/NULLIF(SUM(orders),0) aov FROM ecommerce GROUP BY channel ORDER BY revenue DESC,channel;
+
+-- Q04: Monthly ecommerce metrics
+WITH m AS (SELECT month,SUM(views) views,SUM(purchases) purchases,SUM(revenue) revenue FROM ecommerce GROUP BY month),p AS (SELECT *,LAG(revenue) OVER(ORDER BY month) prior_revenue FROM m) SELECT *,1.0*purchases/NULLIF(views,0) view_purchase_rate,1.0*(revenue-prior_revenue)/NULLIF(prior_revenue,0) mom_revenue_change FROM p ORDER BY month;
+
+-- Q05: Funnel validity exceptions
+SELECT source_row,views,carts,checkouts,purchases FROM ecommerce WHERE views<carts OR carts<checkouts OR checkouts<purchases OR purchases<0 ORDER BY source_row;
