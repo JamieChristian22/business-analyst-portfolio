@@ -1,0 +1,394 @@
+[
+  {
+    "folder": "Amazon_Marketplace_Analytics_Project",
+    "code": "MKT",
+    "title": "Marketplace Revenue and Seller Reporting",
+    "business": "A marketplace operations team needs one agreed view of gross merchandise value, platform revenue, seller concentration, and take rate before it reviews seller performance.",
+    "decision": "Which seller/category combinations deserve an operational review, and which KPI definitions must be standardized before the next monthly business review?",
+    "sponsor": "Marketplace General Manager",
+    "owner": "Marketplace Operations Manager",
+    "user": "Seller Performance Analyst",
+    "source": "amazon_marketplace_aligned.csv",
+    "tbl": "marketplace",
+    "period": "YearMonth",
+    "money": "GMV",
+    "fields": {
+      "OrderDate": "order_date",
+      "Year": "year",
+      "YearMonth": "month",
+      "Category": "category",
+      "Seller": "seller",
+      "ProductID": "product_id",
+      "Orders": "orders",
+      "Units Sold": "units",
+      "GMV": "gmv",
+      "Marketplace Revenue": "platform_revenue",
+      "Take Rate %": "source_take_rate",
+      "AOV": "source_aov"
+    },
+    "dims": [
+      "category",
+      "seller",
+      "product_id"
+    ],
+    "nums": [
+      "orders",
+      "units",
+      "gmv",
+      "platform_revenue",
+      "source_take_rate",
+      "source_aov"
+    ],
+    "grain": "Source row describing an order-level marketplace record. No order identifier is supplied; source row number is an ingestion key, not proof of business uniqueness.",
+    "limitations": "The dataset has no item cost, returns, seller fees beyond platform revenue, inventory, or experiment assignment. It cannot establish profit margins, pricing causality, or actual Amazon business performance.",
+    "extra": "Request order_id, fee schedule, returns, item costs, seller SLAs, and ledger control totals before extending this case into commercial profitability.",
+    "queries": [
+      {
+        "id": "Q01",
+        "title": "Control totals"
+      },
+      {
+        "id": "Q02",
+        "title": "Monthly marketplace metrics"
+      },
+      {
+        "id": "Q03",
+        "title": "Seller contribution"
+      },
+      {
+        "id": "Q04",
+        "title": "Product Pareto contribution"
+      },
+      {
+        "id": "Q05",
+        "title": "Category and seller drilldown"
+      }
+    ]
+  },
+  {
+    "folder": "Ecommerce_Product_Analytics_Project",
+    "code": "ECOM",
+    "title": "Ecommerce Funnel Measurement and Experiment Discovery",
+    "business": "An ecommerce team needs a reliable funnel baseline and device comparison to choose a checkout investigation without attributing drop-off to causes that were never measured.",
+    "decision": "Which funnel transition and device should be investigated first, and what new instrumentation is needed to test a proposed checkout change?",
+    "sponsor": "Head of Ecommerce",
+    "owner": "Checkout Product Manager",
+    "user": "Product Analyst",
+    "source": "ecommerce_product_analytics_aligned.csv",
+    "tbl": "ecommerce",
+    "period": "YearMonth",
+    "money": "Total Revenue",
+    "fields": {
+      "YearMonth": "month",
+      "device_type": "device",
+      "acquisition_channel": "channel",
+      "country": "country",
+      "category": "category",
+      "product_id": "product_id",
+      "Viewed Customers": "views",
+      "Cart Customers": "carts",
+      "Checkout Customers": "checkouts",
+      "Purchased Customers": "purchases",
+      "Total Revenue": "revenue",
+      "Profit": "profit",
+      "Total Orders": "orders",
+      "Profit Margin": "source_margin",
+      "View \u2192 Cart %": "source_view_cart",
+      "Cart \u2192 Checkout %": "source_cart_checkout",
+      "Checkout \u2192 Purchase %": "source_checkout_purchase",
+      "Drop-off (Views\u2192Cart)": "source_drop_view_cart",
+      "Drop-off (Cart\u2192Checkout)": "source_drop_cart_checkout",
+      "Drop-off (Checkout\u2192Purchase)": "source_drop_checkout_purchase",
+      "Funnel Metric": "funnel_metric",
+      "Stage": "stage_label",
+      "AOV": "source_aov"
+    },
+    "dims": [
+      "device",
+      "channel",
+      "country",
+      "category",
+      "product_id",
+      "funnel_metric",
+      "stage_label"
+    ],
+    "nums": [
+      "views",
+      "carts",
+      "checkouts",
+      "purchases",
+      "revenue",
+      "profit",
+      "orders",
+      "source_margin",
+      "source_view_cart",
+      "source_cart_checkout",
+      "source_checkout_purchase",
+      "source_drop_view_cart",
+      "source_drop_cart_checkout",
+      "source_drop_checkout_purchase",
+      "source_aov"
+    ],
+    "grain": "Anonymous source observation with binary funnel counts. There is no customer/session identifier; totals count observations and cannot establish distinct customers across periods.",
+    "limitations": "Repeated complete rows may be valid anonymous observations. Retain them until event keys establish duplication. There are no shipping fees, error events, experiment arms, or customer IDs; causal checkout explanations and unique-customer claims are unsupported.",
+    "extra": "Add event_id, session_id, exposure_id, experiment_variant, timestamps, shipping quote events, payment outcomes, and consent flags before causal experimentation.",
+    "queries": [
+      {
+        "id": "Q01",
+        "title": "Funnel control totals"
+      },
+      {
+        "id": "Q02",
+        "title": "Device funnel"
+      },
+      {
+        "id": "Q03",
+        "title": "Channel economics"
+      },
+      {
+        "id": "Q04",
+        "title": "Monthly ecommerce metrics"
+      },
+      {
+        "id": "Q05",
+        "title": "Funnel validity exceptions"
+      }
+    ]
+  },
+  {
+    "folder": "FPnA_Executive_Analytics_Project",
+    "code": "FIN",
+    "title": "Finance Reporting Reconciliation and Variance Control",
+    "business": "Finance has two supplied extracts: a dashboard summary and an account fact table. Leadership needs reconciled actual/budget reporting and an explicit treatment of any differences before a close pack can be approved.",
+    "decision": "Can the account fact table support a reliable variance pack, and can its totals be reconciled to the separate dashboard extract?",
+    "sponsor": "Chief Financial Officer",
+    "owner": "FP&A Manager",
+    "user": "Finance Analyst",
+    "source": "fpna_finance_fact.csv",
+    "tbl": "finance",
+    "period": "MonthYear",
+    "money": "Amount",
+    "fields": {
+      "MonthYear": "month",
+      "FiscalYear": "fiscal_year",
+      "Department": "department",
+      "Region": "region",
+      "Account": "account",
+      "AccountCategory": "account_category",
+      "Scenario": "scenario",
+      "Amount": "amount"
+    },
+    "dims": [
+      "department",
+      "region",
+      "account",
+      "account_category",
+      "scenario"
+    ],
+    "nums": [
+      "amount"
+    ],
+    "grain": "One month / fiscal year / department / region / account / account category / scenario record. Account categories are Revenue, COGS, and OpEx; scenarios are Actual and Budget.",
+    "limitations": "The two supplied extracts are not assumed to share totals or definitions. The account fact table is the analysis basis; reconciliation differences remain visible and block production close approval. There are no balance sheet or cash-flow records.",
+    "extra": "Obtain ledger control totals, chart-of-accounts mapping, approved budget version, FX policy, fiscal calendar, and controller signoff before production finance use.",
+    "queries": [
+      {
+        "id": "Q01",
+        "title": "Finance controls"
+      },
+      {
+        "id": "Q02",
+        "title": "Monthly actual budget bridge"
+      },
+      {
+        "id": "Q03",
+        "title": "Department revenue variance"
+      },
+      {
+        "id": "Q04",
+        "title": "Fact versus dashboard reconciliation"
+      },
+      {
+        "id": "Q05",
+        "title": "Budget completeness"
+      }
+    ]
+  },
+  {
+    "folder": "Marketing_Performance_ROI_Project",
+    "code": "ADS",
+    "title": "Advertising Efficiency and Budget Review",
+    "business": "A growth team needs a consistent way to compare ad groups and device mix while finance needs clarity on whether revenue/spend ratios represent ROAS, contribution, or full business ROI.",
+    "decision": "Which ad groups should be reviewed for a controlled budget test, and what cost/attribution gaps prevent a full ROI claim?",
+    "sponsor": "VP Growth",
+    "owner": "Marketing Operations Manager",
+    "user": "Campaign Analyst",
+    "source": "marketing_ads_roi_dashboard_aligned.csv",
+    "tbl": "advertising",
+    "period": "Month",
+    "money": "Revenue",
+    "fields": {
+      "Month": "month",
+      "Ad Group": "ad_group",
+      "Device": "device",
+      "Impressions": "impressions",
+      "Clicks": "clicks",
+      "CTR": "source_ctr",
+      "CPC": "source_cpc",
+      "Conv Rate": "source_conversion_rate",
+      "Conversions": "conversions",
+      "Cost": "cost",
+      "Revenue": "revenue",
+      "Sale Amount": "source_sale_amount",
+      "P&L": "source_pnl"
+    },
+    "dims": [
+      "ad_group",
+      "device"
+    ],
+    "nums": [
+      "impressions",
+      "clicks",
+      "source_ctr",
+      "source_cpc",
+      "source_conversion_rate",
+      "conversions",
+      "cost",
+      "revenue",
+      "source_sale_amount",
+      "source_pnl"
+    ],
+    "grain": "Source advertising observation by month, ad group, and device. There is no campaign or event ID; repeated dimension combinations are valid additive records.",
+    "limitations": "Attributed revenue does not prove incremental revenue. Revenue minus advertising cost excludes COGS, agency fees, returns, and other costs; it is an ad-only contribution measure, not full net profit or causal ROI.",
+    "extra": "Obtain campaign IDs, attribution windows, order-level revenue, returns, COGS, agency fees, and experiment assignments before full ROI or incrementality reporting.",
+    "queries": [
+      {
+        "id": "Q01",
+        "title": "Advertising controls"
+      },
+      {
+        "id": "Q02",
+        "title": "Ad group efficiency"
+      },
+      {
+        "id": "Q03",
+        "title": "Device efficiency"
+      },
+      {
+        "id": "Q04",
+        "title": "Monthly advertising trend"
+      },
+      {
+        "id": "Q05",
+        "title": "Contribution exceptions"
+      }
+    ]
+  },
+  {
+    "folder": "Regional_Sales_Performance_Project",
+    "code": "REG",
+    "title": "Restaurant Sales Reporting by City and Zone",
+    "business": "A restaurant operations team needs monthly sales comparisons across cities and zones, stable restaurant rankings, and a defensible review of changes over the six-month extract.",
+    "decision": "Which restaurants and zones require a manager review, and are observed monthly changes supported by comparable records?",
+    "sponsor": "Regional Operations Director",
+    "owner": "Sales Operations Manager",
+    "user": "Regional Analyst",
+    "source": "regional_sales_tableau_aligned.csv",
+    "tbl": "restaurant_sales",
+    "period": "Month",
+    "money": "Sales",
+    "fields": {
+      "Restaurant ID": "restaurant_id",
+      "City": "city",
+      "Zone": "zone",
+      "Month": "month",
+      "Sales": "sales"
+    },
+    "dims": [
+      "restaurant_id",
+      "city",
+      "zone"
+    ],
+    "nums": [
+      "sales"
+    ],
+    "grain": "One restaurant-month sales record. Restaurant ID plus month is the candidate business key and is tested for uniqueness.",
+    "limitations": "There are no revenue targets, sales reps, product categories, operating costs, or prior-year records. This case cannot establish target attainment, profitability, rep performance, or year-over-year change.",
+    "extra": "Obtain monthly targets, store operating calendar, closures, currency, comparable-store flags, costs, and prior-year sales before extending performance conclusions.",
+    "queries": [
+      {
+        "id": "Q01",
+        "title": "Restaurant controls"
+      },
+      {
+        "id": "Q02",
+        "title": "Zone and city sales"
+      },
+      {
+        "id": "Q03",
+        "title": "Adjacent-month sales change"
+      },
+      {
+        "id": "Q04",
+        "title": "Restaurant rank and coverage"
+      },
+      {
+        "id": "Q05",
+        "title": "Duplicate key exceptions"
+      }
+    ]
+  },
+  {
+    "folder": "Salesforce_Project",
+    "code": "CRM",
+    "title": "CRM Pipeline Definitions and Forecast Readiness",
+    "business": "A sales operations team needs a transparent pipeline view that separates open opportunities, closed outcomes, and probability-weighted amounts before using the CRM extract in a forecast discussion.",
+    "decision": "What is the current open pipeline and weighted open pipeline, and what additional CRM fields are needed before forecasting timing or conversion?",
+    "sponsor": "VP Sales",
+    "owner": "Sales Operations Manager",
+    "user": "Revenue Operations Analyst",
+    "source": "pipeline.csv",
+    "tbl": "pipeline",
+    "period": null,
+    "money": "Amount",
+    "fields": {
+      "Opportunity": "opportunity_id",
+      "Stage": "stage",
+      "Amount": "amount",
+      "Probability": "probability"
+    },
+    "dims": [
+      "opportunity_id",
+      "stage"
+    ],
+    "nums": [
+      "amount",
+      "probability"
+    ],
+    "grain": "One current opportunity snapshot identified by Opportunity. There are ten records; no snapshot date or stage history is supplied.",
+    "limitations": "There are no close dates, owners, customer identifiers, stage history, snapshot dates, or activities. This is a small current-state snapshot and cannot establish conversion rates, sales velocity, forecast accuracy, or a historical win rate.",
+    "extra": "Add snapshot_date, owner_id, created_date, expected_close_date, stage_history, loss_reason, account_id, and approved probability policy before time-bounded forecasting.",
+    "queries": [
+      {
+        "id": "Q01",
+        "title": "Opportunity controls"
+      },
+      {
+        "id": "Q02",
+        "title": "Open and closed bridge"
+      },
+      {
+        "id": "Q03",
+        "title": "Stage concentration"
+      },
+      {
+        "id": "Q04",
+        "title": "Open opportunity review queue"
+      },
+      {
+        "id": "Q05",
+        "title": "Stage probability exceptions"
+      }
+    ]
+  }
+]
