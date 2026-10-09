@@ -1,0 +1,2 @@
+Defect ID,Linked Test,Severity,Description,Status,Owner,Reproduction,Disposition
+MKT-D-01,Discovery audit,High,Historical presentation lacks traceable evidence or detailed controls for all advertised claims; current scope and specifications replace it.,Current narrative corrected; legacy evidence retained,Marketplace Operations Manager,Compare historical README / source schema to current source profile.,Do not claim production approval. Review revised scope and remaining limitations.

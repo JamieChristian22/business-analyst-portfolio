@@ -1,0 +1,3 @@
+ID,Decision,Rationale,Alternatives,Decision Owner,Date,Approval Status
+MKT-DEC-01,Use actual supplied schema as the authoritative analysis scope.,"Source row describing an order-level marketplace record. No order identifier is supplied; source row number is an ingestion key, not proof of business uniqueness.",Keep historical generic narrative; rejected because fields do not support it.,BA recommendation,2026-10-09,Proposed; simulated stakeholder review pending
+MKT-DEC-02,Preserve all input rows and immutable source bytes.,A source_row lineage key is not a business deduplication key.,Drop repeated rows automatically; rejected without key evidence.,BA / Data owner recommendation,2026-10-09,Implemented in portfolio prototype; production approval pending

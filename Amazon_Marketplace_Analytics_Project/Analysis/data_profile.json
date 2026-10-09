@@ -1,0 +1,49 @@
+{
+  "project": "MKT",
+  "source_file": "amazon_marketplace_aligned.csv",
+  "sha256": "64d55b11b0676a1eef06846de2786e94a02e0b656860ac28a0c69b4e417daeba",
+  "records": 5500,
+  "fields": [
+    "OrderDate",
+    "Year",
+    "YearMonth",
+    "Category",
+    "Seller",
+    "ProductID",
+    "Orders",
+    "Units Sold",
+    "GMV",
+    "Marketplace Revenue",
+    "Take Rate %",
+    "AOV"
+  ],
+  "periods": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "complete_repeated_rows": 0,
+  "source_validation_exceptions": 0,
+  "exception_examples": [],
+  "deduplication": "None. Source rows are retained. Business-key exceptions must be investigated.",
+  "lineage": "source_row is the one-based data record number after the CSV header.",
+  "dimensions": {
+    "Category": [
+      "Beauty",
+      "Electronics",
+      "Fitness",
+      "Home",
+      "Kids",
+      "Kitchen"
+    ],
+    "Seller": [
+      "Apex Essentials",
+      "Apex Outdoor",
+      "Apex Prime",
+      "Apex Value"
+    ]
+  }
+}
