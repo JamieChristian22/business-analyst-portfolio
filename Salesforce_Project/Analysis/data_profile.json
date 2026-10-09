@@ -1,0 +1,40 @@
+{
+  "project": "CRM",
+  "source_file": "pipeline.csv",
+  "sha256": "bbdd4b36ce5cbbe112022dc98642a881256a2f27fa2ce444d5eb912c685f2616",
+  "records": 10,
+  "fields": [
+    "Opportunity",
+    "Stage",
+    "Amount",
+    "Probability"
+  ],
+  "periods": [],
+  "complete_repeated_rows": 0,
+  "source_validation_exceptions": 0,
+  "exception_examples": [],
+  "deduplication": "None. Source rows are retained. Business-key exceptions must be investigated.",
+  "lineage": "source_row is the one-based data record number after the CSV header.",
+  "dimensions": {
+    "Opportunity": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+    ],
+    "Stage": [
+      "Closed Lost",
+      "Closed Won",
+      "Meet",
+      "Negotiate",
+      "Proposal",
+      "Qualify"
+    ]
+  }
+}
