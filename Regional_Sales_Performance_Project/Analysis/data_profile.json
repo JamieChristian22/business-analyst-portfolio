@@ -1,0 +1,46 @@
+{
+  "project": "REG",
+  "source_file": "regional_sales_tableau_aligned.csv",
+  "sha256": "df348e86f66cca6a5e9c14a2fd638fe4d037e18f3fe0e2401475ea36250b12ef",
+  "records": 1320,
+  "fields": [
+    "Restaurant ID",
+    "City",
+    "Zone",
+    "Month",
+    "Sales"
+  ],
+  "periods": [
+    "2025-07",
+    "2025-08",
+    "2025-09",
+    "2025-10",
+    "2025-11",
+    "2025-12"
+  ],
+  "complete_repeated_rows": 0,
+  "source_validation_exceptions": 0,
+  "exception_examples": [],
+  "deduplication": "None. Source rows are retained. Business-key exceptions must be investigated.",
+  "lineage": "source_row is the one-based data record number after the CSV header.",
+  "dimensions": {
+    "City": [
+      "Asheville",
+      "Charlotte",
+      "Durham",
+      "Fayetteville",
+      "Greensboro",
+      "Greenville",
+      "Raleigh",
+      "Wilmington",
+      "Winston-Salem"
+    ],
+    "Zone": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ]
+  }
+}
