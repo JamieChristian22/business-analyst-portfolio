@@ -1,9 +1,0 @@
-Business Req,Functional Req,User Story,Test Case,Defect/Decision,State
-BR-01,FR-01,US-01,UAT-001,KAN-4,Mock positive API assertions observed
-BR-02,FR-02,US-01,UAT-002,KAN-5,Designed negative test; simulated defect
-BR-02,FR-03,US-01,UAT-003,,Not executed
-BR-03,FR-04,US-02,UAT-004,,Not executed
-BR-04,FR-05/FR-06,US-03,UAT-005,,Not executed
-BR-05,FR-07,US-03,UAT-006,,Not executed
-BR-06,FR-08,US-04,UAT-007,,Not executed
-BR-07,FR-09,US-03,UAT-008,,Not executed

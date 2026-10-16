@@ -1,9 +1,0 @@
-Activity,HR,Hiring Manager,IT Operations,IAM/Security,Business Analyst,Product Owner
-Requirements,C,C,C,C,R,A
-Intake data quality,A/R,I,C,C,C,I
-Manager approval,I,A/R,I,C,C,I
-Role access policy,C,C,R,A,C,I
-Integration build,C,I,A/R,C,C,I
-UAT execution,R,R,C,C,A,I
-Go-live approval,C,C,R,C,C,A
-Incident response,I,I,A/R,C,I,I

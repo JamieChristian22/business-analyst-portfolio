@@ -1,8 +1,0 @@
-ID,Type,Description,Likelihood,Impact,Mitigation,Owner,Status
-R-01,Risk,Invalid or incomplete employee fields,High,High,Server-side validation and negative UAT,HR/Product Owner,Open - proposed
-R-02,Risk,Duplicate identity creation,Medium,High,Unique ID and idempotency,IAM Lead,Open - proposed
-R-03,Risk,Excessive access grants,Medium,Critical,Approved role bundles and security review,Security Lead,Open - proposed
-R-04,Risk,Unobservable integration failures,Medium,High,"Correlation IDs, alerts, exception queue",IT Lead,Open - proposed
-A-01,Assumption,HR SaaS API supports required fields,Unknown,Medium,Vendor discovery,Integration Lead,Unvalidated
-I-01,Issue,Negative email validation not tested in actual app,Confirmed gap,High,Secure sandbox and execute UAT-002,BA/QA,Open
-D-01,Dependency,Approval matrix and role catalog,High,High,Stakeholder workshop,Product Owner,Pending
