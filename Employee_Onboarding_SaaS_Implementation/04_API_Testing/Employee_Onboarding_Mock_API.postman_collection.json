@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Employee Onboarding | JSONPlaceholder Mock API Lab",
+    "description": "Training-only GET and POST requests. Fake API, not production onboarding. POST does not persist data.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://jsonplaceholder.typicode.com"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET users | smoke test",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{baseUrl}}/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users"
+          ]
+        },
+        "description": "Public mock user list, no real employee data."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"GET returns 200\", function () { pm.response.to.have.status(200); });",
+              "pm.test(\"GET returns a nonempty array\", function () { const body=pm.response.json(); pm.expect(body).to.be.an(\"array\").that.is.not.empty; });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "POST user | four positive assertions",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jordan Smith\",\n  \"username\": \"jsmith\",\n  \"email\": \"jordan.smith@example.com\",\n  \"department\": \"Information Technology\",\n  \"role\": \"Business Analyst\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/users",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users"
+          ]
+        },
+        "description": "Training mock. Response echoes synthetic request fields; no persistence or real validation."
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status code is 201\", function () { pm.response.to.have.status(201); });",
+              "pm.test(\"Employee name matches request\", function () { const r=pm.response.json(); pm.expect(r.name).to.eql(\"Jordan Smith\"); });",
+              "pm.test(\"Employee email matches request\", function () { const r=pm.response.json(); pm.expect(r.email).to.eql(\"jordan.smith@example.com\"); });",
+              "pm.test(\"Employee ID is returned\", function () { const r=pm.response.json(); pm.expect(r).to.have.property(\"id\"); });"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
