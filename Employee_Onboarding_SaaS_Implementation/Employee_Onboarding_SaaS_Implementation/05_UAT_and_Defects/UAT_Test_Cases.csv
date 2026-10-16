@@ -1,0 +1,9 @@
+Case ID,Requirement,Scenario,Precondition,Steps,Expected,Actual,Status,Evidence
+UAT-001,BR-01,Mock positive API POST,Postman and internet available,"Send synthetic JSON POST /users; check status,name,email,id",201; name/email match; ID exists,4/4 assertions passed on mock API,Passed (mock API only),User screenshot; KAN-4
+UAT-002,BR-02,Reject invalid email,Real validation-capable sandbox available,Submit email jordan.smith-invalid,422 or field error; no provisioning,Not executed,Not Run,KAN-5 simulated defect only
+UAT-003,BR-02,Prevent duplicate employee ID,Integration sandbox seeded,Submit same employee ID twice,No duplicate account,Not executed,Not Run,
+UAT-004,BR-03,Approval required,Manager and HR test accounts,Attempt provisioning without approval,Provisioning blocked,Not executed,Not Run,
+UAT-005,BR-04,Role mapping,Approved role catalog,Approve standard BA role,Only approved bundle provisioned,Not executed,Not Run,
+UAT-006,BR-05,Exception routing,Failure simulation enabled,Force downstream 503,Retry and assign exception,Not executed,Not Run,
+UAT-007,BR-06,Audit completeness,Audit sandbox enabled,Complete request and inspect events,Actor/time/action traceable,Not executed,Not Run,
+UAT-008,BR-07,Notification delivery,Notification sandbox enabled,Complete and reject separate requests,Correct recipient/status notifications,Not executed,Not Run,
