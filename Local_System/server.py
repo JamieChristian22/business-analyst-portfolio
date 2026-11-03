@@ -104,6 +104,25 @@ class Handler(BaseHTTPRequestHandler):
    try:
     if parts.path=='/api/session':result={k:s[k] for k in ['username','role','csrf']}
     elif parts.path=='/api/projects':result=[{k:p[k] for k in ['code','title','decision','limitations','dims']} for p in CONFIG]
+    elif parts.path=='/api/traceability':
+     project=params.get('project','')
+     if project and project not in PROJECTS:raise APIError(400,'Select a valid project')
+     rows=c.execute("""SELECT r.id,r.project,r.title,r.priority,r.owner,r.status,
+        (SELECT COUNT(*) FROM uat u WHERE u.requirement_id=r.id) AS test_count,
+        (SELECT COUNT(*) FROM uat u WHERE u.requirement_id=r.id
+         AND u.status='Passed' AND TRIM(u.actual)<>'' AND TRIM(u.evidence)<>'') AS passed_with_evidence,
+        (SELECT COUNT(*) FROM gaps g WHERE g.requirement_id=r.id) AS gap_count,
+        (SELECT COUNT(*) FROM gaps g WHERE g.requirement_id=r.id AND g.status!='Closed') AS open_gaps
+        FROM requirements r WHERE (?='' OR r.project=?) ORDER BY r.project,r.id""",
+        (project,project)).fetchall()
+     items=[{**dict(row),'uat_ready':bool(row['test_count']==3 and row['passed_with_evidence']==3)}
+            for row in rows]
+     result={'project':project or 'ALL','rows':items,
+             'summary':{'requirements':len(items),
+                        'uat_ready':sum(x['uat_ready'] for x in items),
+                        'approved':sum(x['status']=='Approved' for x in items),
+                        'open_gaps':sum(x['open_gaps'] for x in items),
+                        'without_uat':sum(x['test_count']==0 for x in items)}}
     elif parts.path=='/api/records':
      project=params.get('project','');where=' WHERE project=?' if project else '';args=(project,) if project else ()
      result={'requirements':[dict(r) for r in c.execute('SELECT * FROM requirements'+where+' ORDER BY id',args)],'gaps':[dict(r) for r in c.execute('SELECT * FROM gaps'+where+' ORDER BY id',args)],'uat':[dict(r) for r in c.execute('SELECT uat.*,requirements.project FROM uat JOIN requirements ON requirements.id=uat.requirement_id'+(' WHERE requirements.project=?' if project else '')+' ORDER BY uat.id',args)]}
