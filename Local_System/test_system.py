@@ -146,5 +146,7 @@ if __name__=='__main__':
  suite=unittest.defaultTestLoader.loadTestsFromTestCase(SystemTests)
  result=unittest.TextTestRunner(verbosity=2).run(suite)
  report={'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'tests':result.testsRun,'failures':len(result.failures),'errors':len(result.errors),'test_names':unittest.defaultTestLoader.getTestCaseNames(SystemTests),'scope':'HTTP integration tests against temporary seeded SQLite databases; generated credentials and test approvals are discarded. Not external business UAT.'}
- (server.BASE/'Quality/local_system_tests.json').write_text(json.dumps(report,indent=2))
+ report_path=server.BASE/'Quality/local_system_tests.json'
+ report_path.parent.mkdir(parents=True,exist_ok=True)
+ report_path.write_text(json.dumps(report,indent=2))
  raise SystemExit(not result.wasSuccessful())
