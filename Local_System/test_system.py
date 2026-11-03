@@ -115,6 +115,33 @@ class SystemTests(unittest.TestCase):
    self.assertEqual(c.execute("SELECT status FROM uat WHERE id='MKT-UAT-01-A'").fetchone()[0],'Blocked')
   finally:server.BASE=old;c.close()
 
+
+ def test_traceability_matches_live_requirements_and_gap_registers(self):
+  code,report=self.clients['viewer'].request('/api/traceability?project=MKT')
+  self.assertEqual(code,200)
+  records=self.records()
+  self.assertEqual(report['summary']['requirements'],len(records['requirements']))
+  self.assertEqual(report['summary']['open_gaps'],sum(g['status']!='Closed' for g in records['gaps']))
+  self.assertEqual({r['id'] for r in report['rows']},{r['id'] for r in records['requirements']})
+  self.assertTrue(all(r['passed_with_evidence']<=r['test_count'] for r in report['rows']))
+  self.assertEqual(report['summary']['approved'],0)
+
+ def test_traceability_uat_readiness_updates_after_evidence_changes(self):
+  requirement=self.req()
+  self.pass_tests()
+  code,report=self.clients['analyst'].request('/api/traceability?project=MKT')
+  target=next(x for x in report['rows'] if x['id']==requirement['id'])
+  self.assertTrue(target['uat_ready'])
+  self.assertEqual(target['passed_with_evidence'],3)
+  self.assertNotEqual(target['status'],'Approved')  # local UAT readiness is not approval
+  t=next(t for t in self.records()['uat'] if t['requirement_id']==requirement['id'])
+  self.clients['analyst'].request('/api/uat',{'id':t['id'],'version':t['version'],'status':'Failed','actual':'Synthetic regression','evidence':'Automated fixture'})
+  changed=self.clients['viewer'].request('/api/traceability?project=MKT')[1]
+  self.assertFalse(next(x for x in changed['rows'] if x['id']==requirement['id'])['uat_ready'])
+
+ def test_traceability_rejects_unknown_project(self):
+  self.assertEqual(self.clients['viewer'].request('/api/traceability?project=INVALID')[0],400)
+
 if __name__=='__main__':
  suite=unittest.defaultTestLoader.loadTestsFromTestCase(SystemTests)
  result=unittest.TextTestRunner(verbosity=2).run(suite)
