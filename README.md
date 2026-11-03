@@ -609,3 +609,7 @@ Business Analyst · Business Systems Analyst · Technical Business Analyst · Sy
 ## License and third-party materials
 
 See [LICENSE](LICENSE) for the repository license. Third-party code, datasets, images, and other assets retain their respective terms.
+
+## Reviewer guide and asset provenance
+
+For a guided project review and sample dataset/media provenance checks, see [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md). Asset listings do not establish ownership or license clearance.
