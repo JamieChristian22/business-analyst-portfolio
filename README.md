@@ -613,3 +613,9 @@ See [LICENSE](LICENSE) for the repository license. Third-party code, datasets, i
 ## Reviewer guide and asset provenance
 
 For a guided project review and sample dataset/media provenance checks, see [REVIEWER_GUIDE.md](REVIEWER_GUIDE.md). Asset listings do not establish ownership or license clearance.
+
+## Live requirements traceability in the local workbench
+
+The **Traceability** tab recomputes UAT readiness, passed-with-evidence cases, requirement status, and open gaps directly from the local SQLite workflow records. The authenticated `GET /api/traceability?project=MKT` endpoint returns the same source-backed summary. Readiness is not external stakeholder signoff.
+
+Run the standard-library HTTP/SQLite integration suite using `python Local_System/test_system.py`. The [workbench regression workflow](.github/workflows/ba-workbench-regression.yml) verifies readiness transitions, review authorization, evidence requirements, and source-refresh behavior.
