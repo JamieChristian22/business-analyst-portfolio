@@ -1,0 +1,32 @@
+# Private configuration, secrets, and key material
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa
+id_ed25519
+credentials.json
+service-account*.json
+*.tfvars
+!*.tfvars.example
+
+# Cloud state and local deployment files
+.terraform/
+*.tfstate
+*.tfstate.*
+
+# Python / Node build and environment artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+node_modules/
+dist/
+
+# Local machine artifacts
+.DS_Store
