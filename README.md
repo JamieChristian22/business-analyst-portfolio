@@ -605,3 +605,7 @@ Business Analyst · Business Systems Analyst · Technical Business Analyst · Sy
 ⭐ Explore the projects to review the supporting documentation, diagrams, testing evidence, and business recommendations.
 
 </div>
+
+## License and third-party materials
+
+See [LICENSE](LICENSE) for the repository license. Third-party code, datasets, images, and other assets retain their respective terms.
