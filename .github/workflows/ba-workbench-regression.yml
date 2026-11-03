@@ -24,6 +24,17 @@ jobs:
           python-version: '3.11'
       - name: Run local SQLite and HTTP workflow integration tests
         run: python Local_System/test_system.py
+      - name: Verify workbench browser JavaScript syntax and traceability navigation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          html = Path('Local_System/index.html').read_text(encoding='utf-8')
+          assert 'data-view="traceability"' in html
+          assert "/api/traceability" in html
+          script = html.split('<script>', 1)[1].split('</script>', 1)[0]
+          Path('/tmp/ba-workbench-inline.js').write_text(script, encoding='utf-8')
+          PY
+          node --check /tmp/ba-workbench-inline.js
       - name: Upload regression evidence
         if: always()
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
